@@ -13,24 +13,24 @@ function startTime() {
 }
 function checkTime(i) {
   if (i < 10) {
-    i = "0" + i
-  };
+    i = "0" + i;
+  }
     return i;
 }
 
 function getWeather() {
-          var weather= "http://api.openweathermap.org/data/2.5/weather?q=Atlanta&units=imperial&appid=e312dbeb8840e51f92334498a261ca1d";
-          $.ajax({
-            url: weather,
-            dataType: "json",
-            success: function(data) {
+  var weather= "http://api.openweathermap.org/data/2.5/weather?q=Atlanta&units=imperial&appid=e312dbeb8840e51f92334498a261ca1d";
 
-        $("#temp").text(data.main.temp);
-        $("#humidity1").text(data.main.humidity);
-        $("#pressure1").text(data.main.pressure);
-        $("#pressure1").text(data.main.temp_max);
-        $("#tempMax").text(data.main.temp_max);
-        $("#tempMin").text(data.main.temp_min);
-         }
-    });
- };
+  $.ajax({
+    url: weather,
+    dataType: "json",
+    success: function(data) {
+      $("#temp").text(data.main.temp);
+      $("#humidity1").text(data.main.humidity);
+      $("#pressure1").text(data.main.pressure);
+      $("#pressure1").text(data.main.temp_max);
+      $("#tempMax").text(data.main.temp_max);
+      $("#tempMin").text(data.main.temp_min);
+    }
+  });
+}
